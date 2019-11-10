@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <style>
+
+      * {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      button {
+        outline: none;
+        background-color: white;
+        border: 1px solid lightgray;
+        color: black;
+        border-radius: 50px;
+        padding: 1px 13px;
+        margin: 7px 3px;
+        cursor: pointer;
+      }
+
+      .center {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .spinner {
+        animation: rotator 1.4s linear infinite;
+      }
+
+      @keyframes rotator {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(270deg);
+        }
+      }
+      .path {
+        stroke-dasharray: 187;
+        stroke-dashoffset: 0;
+        transform-origin: center;
+        animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+      }
+
+      @keyframes colors {
+        0% {
+          stroke: #4285F4;
+        }
+        25% {
+          stroke: #4285F4;
+        }
+        50% {
+          stroke: #4285F4;
+        }
+        75% {
+          stroke: #4285F4;
+        }
+        100% {
+          stroke: #4285F4;
+        }
+      }
+      @keyframes dash {
+        0% {
+          stroke-dashoffset: 187;
+        }
+        50% {
+          stroke-dashoffset: 46.75;
+          transform: rotate(135deg);
+        }
+        100% {
+          stroke-dashoffset: 187;
+          transform: rotate(450deg);
+        }
+      }
+    </style>
+    <div class="center">
+        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+          <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+       </svg>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+
+    <div style="position: absolute;bottom: 0;display: inline-flex;
+    height: 39px;">
+      <p>Go to a webpage</p>
+      <button id="b-0">
+        YouTube
+      </button>
+      <button id="b-1">
+          Google
+      </button>
+      <button id="b-2">
+          Electron
+      </button>
+      &nbsp;&nbsp;
+      <button id="back">
+          Back
+      </button>
+      <button id="forward">
+          Forward
+      </button>
+    </div>
+  </body>
+</html>
